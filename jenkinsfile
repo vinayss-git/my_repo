@@ -1,0 +1,35 @@
+pipeline{
+     agent any
+     
+
+     tools{
+         jdk 'java-11'
+         maven 'maven'
+     } 
+
+     stages{
+         stage('code-checkout'){
+             steps{
+                 git branch:'main', url:'https://github.com/vinayss-git/my_repo.git'
+             }
+         }
+
+         stage('compail'){
+            steps{
+               sh "mvn compile"
+            }
+         }
+         
+         stage('build'){
+             steps{
+               sh "mvn clean install"
+             }
+         }
+     }
+}
+        
+
+
+
+
+
