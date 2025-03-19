@@ -33,6 +33,14 @@ pipeline{
                '''
            }
         }
+        stage("current process running"){
+          steps{
+             sh'''
+                echo "current running process"
+                ps -ef | head
+               '''
+          }
+        }
      }
 }
 
