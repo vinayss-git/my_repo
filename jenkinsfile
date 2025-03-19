@@ -16,13 +16,13 @@ pipeline{
 
          stage('compail'){
             steps{
-                mvn compile
+                "mvn compile"
             }
          }
          
          stage('build'){
              steps{
-               mvn clean install
+               "mvn clean install"
              }
          }
      }
