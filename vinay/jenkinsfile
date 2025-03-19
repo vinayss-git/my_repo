@@ -1,0 +1,41 @@
+pipeline{
+     agent any
+     stages{
+        stage("building system details"){
+           steps{
+              sh'''
+                echo "system details"
+                uname -a
+              '''
+           }
+        }
+        stage("memory details"){
+           steps{
+              sh'''
+                echo "memory details"
+                free -h
+              '''
+           }
+        }
+        stage("cpu details"){
+           steps{
+               sh'''
+                echo "cpu details"
+                lscpu
+               '''
+           }
+        }
+        stage("disk utilization details"){
+           steps{
+               sh'''
+                echo "disk utilization details"
+                df -kh
+               '''
+           }
+        }
+     }
+}
+
+
+
+
