@@ -10,7 +10,7 @@ pipeline{
      stages{
          stage("code-checkout"){
              steps{
-                 git branch:"main", url:"https://github.com/vinayss-git/my_repo.git"
+                 git branch:"main", url: "https://github.com/vinayss-git/my_repo.git"
              }
          }
 
